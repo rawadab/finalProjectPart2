@@ -1,0 +1,16 @@
+package com.example.finalproject.DAO;
+
+import com.example.finalproject.Model.Company;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.Optional;
+
+@Repository
+public interface CompanyDAO extends JpaRepository<Company, Integer> {
+
+    Company findByEmailOrName(String email, String name);
+
+
+    Optional<Company> getOneCompanyById(int id);
+}
